@@ -1,0 +1,236 @@
+body {
+  padding: 10px;
+  width: 600px;
+  height: 45px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  width: 100%; display: inline-block;
+}
+
+.searchInput {
+  position: relative; float: left;
+}
+
+.title {
+  border-bottom: 1px solid #e4e4e4;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.label {
+  float: left;
+  color: #777;
+  width: 158px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.value {
+  font-size: 14px;
+  border-left: 1px solid #e4e4e4;
+  float: left;
+  color: black;
+  padding-left: 10px;
+  width: 240px;
+  font-weight: bold;
+}
+
+.wrap {
+  overflow: auto;
+  margin-top: 7px;
+}
+
+.caption {
+  padding-top: 3px;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+#autoComplete_wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+#autoComplete {
+  position: absolute;
+  padding: 0 2rem 0 3.5rem;
+  height: 2.7rem;
+  width: 354px;
+  font-size: 1.2rem;
+  outline: none;
+  border-radius: 0.3rem;
+  border: 0.05rem solid #006df3;
+  caret-color: rgb(12, 9, 61);
+  color: rgba(255, 255, 255, 0);
+  background-image: url(../images/magnifier.svg);
+  background-repeat: no-repeat;
+  background-size: 1.5rem;
+  background-origin: border-box;
+  background-position: left 1.05rem top 0.6rem;
+  transition: all 0.4s ease;
+  -webkit-transition: all -webkit-transform 0.4s ease;
+  text-overflow: ellipsis;
+
+}
+
+#autoComplete::placeholder {
+  color: #ccc;
+  transition: all 0.3s ease;
+}
+
+#autoComplete:hover::placeholder {
+  color: rgba(225, 240, 255);
+  transition: all 0.3s ease;
+  -webkit-transition: all -webkit-transform 0.3s ease;
+}
+
+
+#autoComplete::selection {
+  color: transparent;
+}
+
+#autoComplete:focus::selection {
+  color: #fff;
+  background-color: black;
+}
+
+#autoComplete:hover {
+  padding: 0 2rem 0 3.5rem;
+  color: #006df3;
+  background-image: url(../images/magnifier.svg);
+  background-size: 1.7rem;
+  background-position: left 1.05rem top 0.6rem;
+  transition: all 0.3s ease;
+  -webkit-transition: all -webkit-transform 0.3s ease;
+}
+
+#autoComplete:focus {
+  padding: 0 2rem 0 3.5rem;
+  color: black;
+  width: 354px;
+  border: 0.05rem solid black;
+  background-image: url(../images/magnifier.svg);
+  background-size: 1.5rem;
+  background-position: left 1.05rem top 0.6rem;
+  
+}
+
+#autoComplete_list {
+  position: absolute;
+  z-index: 1000;
+  padding: 0;
+  left: 0;
+  top: 47px;
+  margin-top: 0;
+  transition: all 0.1s ease-in-out;
+  border: 0.05rem solid #e3e3e3;
+  border-radius: 0.3rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px 5px;
+  -webkit-transition: all -webkit-transform 0.1s ease;
+}
+
+.autoComplete_result {
+
+  padding: 0.5rem;
+  width: 426px;
+  list-style: none;
+  text-align: left;
+  font-size: 1.1rem;
+  color: black;
+  transition: all 0.1s ease-in-out;
+  background-color: #fff;
+}
+
+.autoComplete_result::selection {
+  color: rgba(#ffffff, 0);
+  background-color: rgba(#ffffff, 0);
+}
+
+
+.autoComplete_result:hover {
+  cursor: pointer;
+  background-color: rgba(225, 240, 255);
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+}
+
+.autoComplete_result:focus {
+  outline: none;
+  background-color: rgba(225, 240, 255);
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+}
+
+.autoComplete_highlighted {
+  opacity: 1;
+  color: black;
+  font-weight: bold;
+}
+
+.autoComplete_highlighted::selection {
+  color: rgba(#ffffff, 0);
+  background-color: rgba(#ffffff, 0);
+}
+
+.autoComplete_selected {
+  cursor: pointer;
+  background-color: rgba(225, 240, 255);
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+}
+
+
+/* class applies to select element itself, not a wrapper element */
+.select-css {
+  float: right;
+  display: block;
+  font-size: 16px;
+  font-family: sans-serif;
+  color: #444;
+  line-height: 1.9;
+  padding: .4em 1.4em .4em .8em;
+  width: 150px;
+  box-sizing: border-box;
+  margin: 0;
+  border: 1px solid #006df3;
+  box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+  border-radius: .3em;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+  background-repeat: no-repeat, repeat;
+  /* arrow icon position (1em from the right, 50% vertical) , then gradient position*/
+  background-position: right .7em top 50%, 0 0;
+  /* icon size, then gradient */
+  background-size: .65em auto, 100%;
+}
+/* Hide arrow icon in IE browsers */
+.select-css::-ms-expand {
+  display: none;
+}
+/* Hover style */
+.select-css:hover {
+  border-color: #888;
+}
+/* Focus style */
+.select-css:focus {
+  border-color: #aaa;
+  /* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
+  color: #222; 
+  outline: none;
+}
+
+.select-css:disabled:hover, .select-css[aria-disabled=true] {
+  border-color: #aaa;
+}
