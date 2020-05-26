@@ -11,7 +11,7 @@
 </a>
 
 
-<p align="center">
+<p>
   <a href="https://chrome.google.com/webstore/detail/vuetify-search-documentat/bplpigbmdlpgcobimdbdbobijpcddcjn" target="_blank">
     <img alt="Chrome Web Store"  src="https://raw.githubusercontent.com/ademkivanc/vuetify-doc-search/master/assets/screenshot.jpg">
   </a>
